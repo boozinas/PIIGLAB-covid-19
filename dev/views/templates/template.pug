@@ -1,0 +1,32 @@
+include ../config/config
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="css/styles.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css")
+        title Document
+        script(src="js/angular.min.js")
+        script(src="js/app.js")
+        script(src="js/index.js")
+    body
+        header#header.header
+            a(href="").logo
+                img(src="./assets/img/ipn_cic.png", alt="web logo")
+            .topbar
+                #topbar.topbar__lab__mobile
+                    span PIIGLAB 
+                #topbar.topbar__lab__desktop
+                    span Laboratorio de Procesamiento de Inteligente de Información Geoespacial
+                .toggle-menu
+                    #toggle-menu.toggle-menu__icon
+                        .first-bar
+                        .second-bar
+                        .third-bar
+        #sidebar.sidebar
+            block menu
+        main.main
+            block title
+        script(src="js/scripts-min.js")
+

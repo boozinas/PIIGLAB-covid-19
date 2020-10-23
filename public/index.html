@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"/>
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <header class="header" id="header"><a class="logo" href=""><img src="./assets/img/ipn_cic.png" alt="web logo"/></a>
+      <div class="topbar">
+        <div class="topbar__lab__mobile" id="topbar"><span>PIIGLAB </span></div>
+        <div class="topbar__lab__desktop" id="topbar"><span>Laboratorio de Procesamiento de Inteligente de Información Geoespacial</span></div>
+        <div class="toggle-menu">
+          <div class="toggle-menu__icon" id="toggle-menu">
+            <div class="first-bar"></div>
+            <div class="second-bar"></div>
+            <div class="third-bar"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+      <nav class="main-nav" id="main-nav">
+        <ul class="main-menu" id="main-menu">
+          <li class="main-menu__item"><a class="main-menu__link--active" href="/">inicio</a>
+          </li><a class="main-menu__link" href="/covid-19.html">covid-19</a><a class="main-menu__link" href="/contacto.html">contacto</a>
+        </ul>
+      </nav>
+    </div>
+    <main class="main">
+      <h1 class="title">Inicio</h1>
+      <div class="inicio">
+        <div class="inicio__img show"><img src="assets/img/inicio.jpg" alt="Imagen de inicio 1"/></div>
+        <div class="inicio__text show">
+          <h2>Objetivo</h2>
+          <p> Desarrollar docencia e investigación enfocada hacia la resolución de problemas relacionados con el espacio geográfico.</p>
+        </div>
+        <div class="inicio__img"><img src="assets/img/about.jpg" alt="Imagen de inicio 2"/></div>
+        <div class="inicio__text">
+          <h2>Misión</h2>
+          <p>Dar solución a los grandes problemas nacionales con una perspectiva geoespacial, incorporando las ciencias de la computación y las tecnologías geoespaciales, promoviendo la formación de equipos multidisciplinarios. </p>
+        </div>
+        <div class="inicio__img"><img src="assets/img/about.jpg" alt="Imagen de inicio 3"/></div>
+        <div class="inicio__text">
+          <h2>Vision</h2>
+          <p>Ser referente en docencia e investigación en el campo de las ciencias de la información geoespacial. </p>
+        </div>
+      </div>
+      <div class="controls"><i class="fas fa-chevron-circle-left" id="prevSlide"></i><i class="fas fa-chevron-circle-right" id="nextSlide"></i></div>
+    </main>
+    <script src="js/scripts-min.js"></script>
+  </body>
+</html>

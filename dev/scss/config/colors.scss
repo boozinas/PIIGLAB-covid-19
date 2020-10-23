@@ -1,0 +1,32 @@
+:root, [data-theme="default"] {
+    // main
+    --color-primary-darker: #0000;
+    --color-primary-dark: gray;
+    --color-primary: hsl(220, 90%, 56%);
+    --color-primary-light: #dcdcdc;
+    --color-primary-lighter: #ffffff;
+    --color-primary-a20: hsla(220, 90%, 56%, 0.2);
+  
+    --color-accent-darker: hsl(355, 90%, 41%);
+    --color-accent-dark: hsl(355, 90%, 51%);
+    --color-accent: hsl(355, 90%, 61%);
+    --color-accent-light: hsl(355, 90%, 71%);
+    --color-accent-lighter: hsl(355, 90%, 81%);
+  
+    // color contrast
+    --color-bg: hsl(0, 0%, 100%);
+    --color-bg-a00: hsla(0, 0%, 100%, 0);
+    --color-contrast-lower: hsl(0, 0%, 95%);
+    --color-contrast-low: hsl(240, 1%, 83%);
+    --color-contrast-medium: hsl(240, 1%, 48%);
+    --color-contrast-high: hsl(240, 4%, 20%);
+    --color-contrast-higher: hsl(240, 8%, 12%);
+    --color-contrast-higher-a90: hsla(240, 8%, 12%, 0.9);
+}
+
+$primary-color: var(--color-primary-dark);
+$secondary-color: var(--color-primary-darker);
+$background-color: var(--color-primary-light);
+$background-color-light: var(--color-primary-lighter);
+$contrast-color: var(--color-primary-lighter);
+$text-color: var (--color-primary-darker);

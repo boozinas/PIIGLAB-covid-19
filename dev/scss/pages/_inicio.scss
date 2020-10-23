@@ -1,0 +1,43 @@
+.inicio {
+    @include laptop{
+        position: relative;
+        height: 60vh;
+        display: grid;
+        grid-template-columns:  60% 40%;
+        justify-items: center;
+        align-items: center;
+
+        &__img,
+        &__text{
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s;
+            width: 50%;
+            top:0;
+        }
+
+        &__img{
+            padding-left: 1rem;
+            left: 0;
+        }
+        &__text{
+            left: 50%;
+            font-size: 1rem;
+            padding: 0 1rem;
+            & h2 {
+                margin:0;
+            }
+        }
+
+    }
+}
+.show {
+    opacity: 1;
+}
+.controls {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: $text-color;
+}

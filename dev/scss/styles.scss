@@ -1,0 +1,23 @@
+//Guias de estilo
+@import "config/colors.scss";
+@import "config/fonts.scss";
+//Mixins
+@import 'mixins/breakpoints.scss';
+@import 'mixins/reset-list.scss';
+//EstilosBase
+@import 'base/normalize';
+@import 'base/base';
+//imports
+@import 'blocks/header.scss';
+@import 'blocks/_topbar.scss';
+@import 'blocks/_toggle-menu.scss';
+@import 'blocks/menu.scss';
+@import 'blocks/_logo.scss';
+@import 'blocks/sidebar.scss';
+@import 'blocks/main.scss';
+@import 'blocks/titles';
+//Pages
+@import 'pages/inicio';
+@import 'pages/contacto';
+@import 'pages/covid-19';
+

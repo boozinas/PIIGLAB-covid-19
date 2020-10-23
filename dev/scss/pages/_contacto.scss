@@ -1,0 +1,47 @@
+.contact{
+    top:0;
+    height: 30vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.social{
+    top: 0;
+    color: $text-color;
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+
+    height: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+
+    @include laptop{
+        width: 30%;
+    }
+    &__icon{
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: transform 0.3s;
+
+        & i {
+            align-self: center;
+        }
+        @include laptop{
+            &:hover{
+                transform: translateY(-100%);
+                & i:nth-child(2){
+                    color:blue;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"/>
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <header class="header" id="header"><a class="logo" href=""><img src="./assets/img/ipn_cic.png" alt="web logo"/></a>
+      <div class="topbar">
+        <div class="topbar__lab__mobile" id="topbar"><span>PIIGLAB </span></div>
+        <div class="topbar__lab__desktop" id="topbar"><span>Laboratorio de Procesamiento de Inteligente de Información Geoespacial</span></div>
+        <div class="toggle-menu">
+          <div class="toggle-menu__icon" id="toggle-menu">
+            <div class="first-bar"></div>
+            <div class="second-bar"></div>
+            <div class="third-bar"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+      <nav class="main-nav" id="main-nav">
+        <ul class="main-menu" id="main-menu"><a class="main-menu__link" href="/">inicio</a>
+          <li class="main-menu__item"><a class="main-menu__link--active" href="/covid-19.html">covid-19</a>
+          </li><a class="main-menu__link" href="/contacto.html">contacto</a>
+        </ul>
+      </nav>
+    </div>
+    <main class="main">
+      <h1 class="title">Mapas</h1>
+      <div ng-app="Maps">
+        <div class="container" ng-controller="SlideController as slider"><ul class="slider" ng-init="slider.getSlide('hola')">
+          <li ng-repeat="item in slider.slides" id="{{item}}">
+            <h1>{{item}}</h1>
+          </li></ul>
+<ul class="menu">
+          <li ng-repeat="item in slider.slides"><a href="#{{item}}">{{item}}</a></li></ul>
+        </div>
+      </div>
+    </main>
+    <script src="js/scripts-min.js"></script>
+  </body>
+</html>

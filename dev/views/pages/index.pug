@@ -1,0 +1,29 @@
+extends ../templates/template
+block menu
+    -pageActive="inicio"
+    include ../includes/main-menu
+block title
+    h1.title Inicio
+    .inicio
+        .inicio__img.show
+            img(src="assets/img/inicio.jpg" alt="Imagen de inicio 1")
+        .inicio__text.show
+            h2 Objetivo
+            p  Desarrollar docencia e investigación enfocada hacia la resolución de problemas relacionados con el espacio geográfico.
+
+        .inicio__img
+            img(src="assets/img/about.jpg" alt="Imagen de inicio 2")
+        .inicio__text
+            h2 Misión
+            p Dar solución a los grandes problemas nacionales con una perspectiva geoespacial, incorporando las ciencias de la computación y las tecnologías geoespaciales, promoviendo la formación de equipos multidisciplinarios. 
+
+        .inicio__img
+            img(src="assets/img/about.jpg" alt="Imagen de inicio 3")
+        .inicio__text
+            h2 Vision
+            p Ser referente en docencia e investigación en el campo de las ciencias de la información geoespacial. 
+
+
+    .controls
+        i.fas.fa-chevron-circle-left#prevSlide
+        i.fas.fa-chevron-circle-right#nextSlide

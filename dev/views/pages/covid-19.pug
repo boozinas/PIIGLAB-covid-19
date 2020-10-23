@@ -1,0 +1,15 @@
+extends ../templates/template
+block menu
+    -pageActive ='covid-19'
+    include ../includes/main-menu
+block title
+    h1.title Mapas
+    div(ng-app="Maps")
+        div.container(ng-controller="SlideController as slider")
+                <ul class="slider" ng-init="slider.getSlide('hola')">
+                    li(ng-repeat="item in slider.slides" id="{{item}}"): h1 {{item}}
+                </ul>
+                
+                <ul class="menu">
+                    li(ng-repeat="item in slider.slides"): a(href="#{{item}}") {{item}}
+                </ul>
