@@ -7,7 +7,7 @@ block title
     div(ng-app="Maps")
         div.container(ng-controller="SlideController as slider")
                 <ul class="slider" ng-init="slider.getSlide('hola')">
-                    li(ng-repeat="item in slider.slides" id="{{item}}"): h1 {{item}}
+                    li(ng-repeat="item in slider.slides" id="{{item}}"): img(src="assets/img/edo_mex_fallecidos/{{item}}")
                 </ul>
                 
                 <ul class="menu">

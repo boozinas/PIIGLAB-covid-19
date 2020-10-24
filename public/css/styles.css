@@ -214,11 +214,11 @@ body { font-family: sans-serif; }
 
 ul, li { padding: 0; margin: 0; list-style: none; }
 
-ul.slider { position: relative; width: 800px; height: 300px; }
+ul.slider { position: relative; width: 1000px; height: 600px; }
 
 ul.slider li { position: absolute; left: 0px; top: 0px; opacity: 0; width: inherit; height: inherit; transition: opacity .5s; background: #fff; }
 
-ul.slider li img { width: 100%; height: 300px; -o-object-fit: cover; object-fit: cover; }
+ul.slider li img { width: 100%; height: 600px; -o-object-fit: cover; object-fit: cover; }
 
 ul.slider li:first-child { opacity: 1; /*Mostramos el primer <li>*/ }
 

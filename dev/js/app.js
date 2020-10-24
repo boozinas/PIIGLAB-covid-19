@@ -22,7 +22,7 @@ function MapListService(){
     //
     // Hace la peticion al Backend mandando la clave del directorio para devolver un arreglo con imagenes
     service.checkKeywordFolder = function (keyword){
-        return ['1.jpg', '2.jpg', '3.jpg', keyword]
+        return ['1.png', '2.png', '3.png', keyword]
     };
 }
     
