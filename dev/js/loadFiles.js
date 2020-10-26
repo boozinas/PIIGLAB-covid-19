@@ -1,8 +1,8 @@
 var express = require("express");
 const fs = require('fs');
 var app = express();
-const rootFolder = './public/assets/img/';
-const relativeFolder = 'assets/img/';
+const rootFolder = './public/assets/img/COVID/';
+const relativeFolder = 'assets/img/COVID/';
 var categoryFolder = '';
 
 app.get("/url", (req, res, next) => {
