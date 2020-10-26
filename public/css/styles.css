@@ -208,17 +208,17 @@ body { background-color: var(--color-primary-light); color: var --color-primary-
 @media screen and (min-width: 360px) { .social__icon:hover { transform: translateY(-100%); }
   .social__icon:hover i:nth-child(2) { color: blue; } }
 
-body { font-family: sans-serif; }
+.container { background-color: white; width: 80vw; padding-left: 10%; }
 
-.container { background-color: white; width: 800px; padding: 30px; }
+.menu_horizontal { height: 50px; width: 100vw; background-color: red; }
 
 ul, li { padding: 0; margin: 0; list-style: none; }
 
-ul.slider { position: relative; width: 1000px; height: 600px; }
+ul.slider { position: relative; width: 70vw; height: 600px; }
 
 ul.slider li { position: absolute; left: 0px; top: 0px; opacity: 0; width: inherit; height: inherit; transition: opacity .5s; background: #fff; }
 
-ul.slider li img { width: 100%; height: 600px; -o-object-fit: cover; object-fit: cover; }
+ul.slider li img { width: 100%; height: 100%; }
 
 ul.slider li:first-child { opacity: 1; /*Mostramos el primer <li>*/ }
 

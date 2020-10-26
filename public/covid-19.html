@@ -35,10 +35,19 @@
     <main class="main">
       <h1 class="title">Mapas</h1>
       <div ng-app="Maps">
-        <div class="container" ng-controller="SlideController as slider"><ul class="slider" ng-init="slider.getSlide('hola')">
-          <li ng-repeat="item in slider.slides" id="{{item}}"><img src="assets/img/edo_mex_fallecidos/{{item}}"/></li></ul>
-<ul class="menu">
-          <li ng-repeat="item in slider.slides"><a href="#{{item}}">{{item}}</a></li></ul>
+        <!--div.menu_horizontal(ng-controller="CategoryMapsController as category") Hola -->
+        <!--        ul.menu-->
+        <!--            li(ng-repeat="item in slider.slides"): a(href="#{{item}}") {{item}}-->
+        <div class="container" ng-controller="SlideController as slider">
+          <ul class="menu">
+            <li ng-repeat="category in slider.categories"><a href="" ng-click="slider.getImagesByCategory(category);">{{category}}</a></li>
+          </ul>
+          <ul class="menu">
+            <li ng-repeat="item in slider.slides" ng-if="slider.condition"><a href="#{{item}}">{{item}}</a></li>
+          </ul>
+          <ul class="slider" ng-if="slider.condition">
+            <li ng-repeat="item in slider.slides" id="{{item}}"><img src="{{item}}"/></li>
+          </ul>
         </div>
       </div>
     </main>

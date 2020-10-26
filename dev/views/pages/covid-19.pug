@@ -5,11 +5,13 @@ block menu
 block title
     h1.title Mapas
     div(ng-app="Maps")
+        //div.menu_horizontal(ng-controller="CategoryMapsController as category") Hola 
+        //        ul.menu
+        //            li(ng-repeat="item in slider.slides"): a(href="#{{item}}") {{item}}
         div.container(ng-controller="SlideController as slider")
-                <ul class="slider" ng-init="slider.getSlide('hola')">
-                    li(ng-repeat="item in slider.slides" id="{{item}}"): img(src="assets/img/edo_mex_fallecidos/{{item}}")
-                </ul>
-                
-                <ul class="menu">
-                    li(ng-repeat="item in slider.slides"): a(href="#{{item}}") {{item}}
-                </ul>
+                ul.menu
+                    li(ng-repeat="category in slider.categories"): a(href="" ng-click="slider.getImagesByCategory(category);") {{category}}
+                ul.menu
+                    li(ng-repeat="item in slider.slides" ng-if="slider.condition"): a(href="#{{item}}") {{item}}
+                ul.slider(ng-if="slider.condition")
+                    li(ng-repeat="item in slider.slides" id="{{item}}"): img(src="{{item}}")
