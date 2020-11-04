@@ -1,7 +1,8 @@
 .inicio {
+    color: white;
     @include laptop{
         position: relative;
-        height: 60vh;
+        height: 70vh;
         display: grid;
         grid-template-columns:  60% 40%;
         justify-items: center;
@@ -37,7 +38,49 @@
 .controls {
     width: 50%;
     margin: 0 auto;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
-    color: $text-color;
+    color: white;
 }
+
+.tittleBar{
+
+    &__lab__mobile{
+        width: 70px;
+        display: flex;
+        margin: auto;
+        @include laptop{
+            display: none;
+        }
+    }
+
+    &__lab__desktop{
+        width: 100vw;
+        @include mobile{
+            display: none;
+        }
+    }
+
+}
+#particles-js canvas{
+    position: absolute;
+    background: #2c2e43;
+    height: 100vh;
+    z-index: -1;
+}
+
+#particles-js-covid canvas{
+    position: absolute;
+    height: 100vh;
+    z-index: -1;
+}
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .section {
+    flex: 1;
+  }

@@ -3,54 +3,108 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
     <link rel="stylesheet" href="css/styles.css"/>
+    <link href="css/bulma-carousel.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"/>
-    <title>Document</title>
+    <title>PIIGLAB COVID-19</title>
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/index.js"></script>
   </head>
   <body>
-    <header class="header" id="header"><a class="logo" href=""><img src="./assets/img/ipn_cic.png" alt="web logo"/></a>
-      <div class="topbar">
-        <div class="topbar__lab__mobile" id="topbar"><span>PIIGLAB </span></div>
-        <div class="topbar__lab__desktop" id="topbar"><span>Laboratorio de Procesamiento de Inteligente de Información Geoespacial</span></div>
-        <div class="toggle-menu">
-          <div class="toggle-menu__icon" id="toggle-menu">
-            <div class="first-bar"></div>
-            <div class="second-bar"></div>
-            <div class="third-bar"></div>
+    <div id="fb-root"></div>
+    <script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v8.0" nonce="vbOLdK3G"></script>
+    <nav class="navbar is-light has-shadow" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand"><a class="navbar-item" href="https://bulma.io"></a><img src="assets/img/ipn_cic.png" width="112" height="28"/>
+        <h4 class="title is-4 is-hidden-touch">Laboratorio de Procesamiento Inteligente de Información Geoespacial</h4>
+        <h3 class="title is-3 is-hidden-desktop">PIIGLAB</h3><a class="navbar-burger burger" role="button" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample"></a><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </div>
+      <div class="navbar-menu" id="navbarBasicExample">
+        <div class="navbar-start"></div>
+        <div class="navbar-end"><a class="navbar-item" href="/index.html">Inicio</a><a class="navbar-item" href="/covid-19.html">Covid-19</a><a class="navbar-item" href="/contacto.html">Contactanos</a></div>
+      </div>
+    </nav>
+    <main></main>
+    <section class="hero is-dark" id="particles-js-covid">
+      <div class="hero-body">
+        <div class="container"></div>
+        <h1 class="title">Mapas COVID-19</h1>
+      </div>
+    </section>
+    <div ng-app="Maps">
+      <section class="section">
+        <div class="content" ng-controller="SlideController as slider">
+          <div class="columns is-1">
+            <div class="column" ng-repeat="category in slider.categories"><a class="button is-link is-light is-medium" href="" ng-click="slider.getImagesByCategory(category);">{{category | folder_filter | uppercase}}</a></div>
+          </div>
+          <div class="columns is-1 is-multiline is-vcentered">
+            <div class="column" ng-repeat="item in slider.slides" ng-if="slider.condition_category"><a class="button is-light" href="#{{item}}" ng-click="slider.setSlide(item);">{{item | file_filter | folder_filter}}</a></div>
+          </div>
+          <div class="container" ng-if="slider.condition_image">
+            <figure class="image is-4by3"><img src="{{slider.imageSlide}}"/></figure>
           </div>
         </div>
-      </div>
-    </header>
-    <div class="sidebar" id="sidebar">
-      <nav class="main-nav" id="main-nav">
-        <ul class="main-menu" id="main-menu"><a class="main-menu__link" href="/">inicio</a>
-          <li class="main-menu__item"><a class="main-menu__link--active" href="/${page}.html">covid-19</a>
-          </li><a class="main-menu__link" href="/contacto.html">contacto</a>
-        </ul>
-      </nav>
+      </section>
+      <script src="js/bulma-carousel.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        //- bulmaCarousel.attach('#carousel-demo', {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        navigation: true,
+        autoplay: true,
+        loop: true,
+        autoplaySpeed: 1000
+        });
+        }, false);
+      </script>
     </div>
-    <main class="main">
-      <h1 class="title">Mapas</h1>
-      <div ng-app="Maps">
-        <!--div.menu_horizontal(ng-controller="CategoryMapsController as category") Hola -->
-        <!--        ul.menu-->
-        <!--            li(ng-repeat="item in slider.slides"): a(href="#{{item}}") {{item}}-->
-        <div class="container" ng-controller="SlideController as slider">
-          <ul class="menu">
-            <li ng-repeat="category in slider.categories"><a href="" ng-click="slider.getImagesByCategory(category);">{{category}}</a></li>
-          </ul>
-          <ul class="menu">
-            <li ng-repeat="item in slider.slides" ng-if="slider.condition"><a href="#{{item}}">{{item}}</a></li>
-          </ul>
-          <ul class="slider" ng-if="slider.condition">
-            <li ng-repeat="item in slider.slides" id="{{item}}"><img src="{{item}}"/></li>
-          </ul>
+    <script src="js/particles.min.js"></script>
+    <script src="js/particles_app_covid.js"></script>
+  </body>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h4 class="bd-footer-title"><strong>Siguenos en twitter como  <a href="https://www.facebook.com/lab.geoespacialcic">Lab Geoespacial CIC</a><a class="twitter-follow-button" href="https://twitter.com/PIIGLAB?ref_src=twsrc%6Etfw" data-show-count="false">Follow @PIIGLAB</a>
+              <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></strong></h4>
+          <div class="bd-footer-iframe"><a class="twitter-timeline" data-width="300px" data-height="300px" data-theme="light" href="https://twitter.com/PIIGLAB?ref_src=twsrc%5Etfw">Tweets by PIIGLAB</a>
+            <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+        <div class="column">
+          <h4 class="bd-footer-title">
+            <Strong>Añadenos en </Strong>
+          </h4><a href="https://www.facebook.com/piiglab.cicipn">Facebook</a>
+          <div class="bd-footer-iframe is-hidden-touch">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Flab.geoespacialcic%2Fposts%2F372027550840294&amp;show_text=false&amp;width=552&amp;height=289&amp;appId" width="400" height="200" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
+        </div>
+        <div class="column is-one-fifth">
+          <h4 class="bd-footer-title">
+            <Strong>Visita nuestro sitio oficial: <a href="https://piiglab.org/inicio/acerca-de/">PIIGLAB</a>
+              <figure class="image is-square"><img src="assets/img/piig-lab-logo2.jpg"/></figure>
+            </Strong>
+          </h4>
+          <div class="bd-footer-tittle"></div>
+          <div class="bd footer-iframebd-footer-tsp"></div>
         </div>
       </div>
-    </main>
-    <script src="js/scripts-min.js"></script>
-  </body>
+    </div>
+  </footer>
+  <footer class="footer" style="background: #672445">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p><b>INSTITUTO POLÍTECNICO NACIONAL</b></p>
+        <p><sub>D.R. Instituto Politécnico Nacional (IPN). Av. Luis Enrique Erro S/N, Unidad Profesional Adolfo López Mateos, Zacatenco, Alcaldía Gustavo A. Madero, C.P. 07738, Ciudad de México, 2019. Conmutador: 55 57 29 60 00 / 55 57 29 63 00.</sub></p>
+        <p><sub>Esta página es una obra intelectual protegida por la Ley Federal del Derecho de Autor, puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica; su uso para otros fines, requiere autorización previa y por escrito del Centro de Investigación en Computación.</sub>
+          <hr/>
+        </p>
+        <p> <sub>Copyright © 2020 Todos los derechos reservados | Página producida por el laboratorio PIIG</sub></p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/scripts-min.js"></script>
+  <script src="js/particles.min.js"></script>
 </html>

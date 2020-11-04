@@ -1,23 +1,27 @@
-//Guias de estilo
+//Guias de es
+@import 'base/footer';
 @import "config/colors.scss";
-@import "config/fonts.scss";
-//Mixins
+@import 'config/colors_bulma.scss';
+
+// @import "config/fonts.scss";
+// //Mixins
 @import 'mixins/breakpoints.scss';
-@import 'mixins/reset-list.scss';
-//EstilosBase
-@import 'base/normalize';
-@import 'base/base';
-//imports
-@import 'blocks/header.scss';
-@import 'blocks/_topbar.scss';
-@import 'blocks/_toggle-menu.scss';
-@import 'blocks/menu.scss';
-@import 'blocks/_logo.scss';
-@import 'blocks/sidebar.scss';
-@import 'blocks/main.scss';
-@import 'blocks/titles';
-//Pages
+// @import 'mixins/reset-list.scss';
+// //EstilosBase
+// @import 'base/normalize';
+// @import 'base/base';
+// //imports
+// @import 'blocks/header.scss';
+// @import 'blocks/_topbar.scss';
+// @import 'blocks/_toggle-menu.scss';
+// @import 'blocks/menu.scss';
+// @import 'blocks/_logo.scss';
+// @import 'blocks/sidebar.scss';
+// @import 'blocks/main.scss';
+// @import 'blocks/titles';
+// //Pages
 @import 'pages/inicio';
-@import 'pages/contacto';
+// @import 'pages/contacto';
 @import 'pages/covid-19';
+// @import "../node_modules/bulma/bulma.sass";
 

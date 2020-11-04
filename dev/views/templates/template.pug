@@ -4,29 +4,41 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- link(rel="stylesheet" href="css/styles.css")
+        //- link(rel="stylesheet" href="css/styles.css")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css")
         link(rel="stylesheet" href="css/styles.css")
+        link(href='css/bulma-carousel.min.css' rel='stylesheet')
+        //- link(rel="sytlesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css")
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css")
-        title Document
+        title PIIGLAB COVID-19
         script(src="js/angular.min.js")
         script(src="js/app.js")
         script(src="js/index.js")
+        //- script(src="js/script-carousels.js")
     body
-        header#header.header
-            a(href="").logo
-                img(src="./assets/img/ipn_cic.png", alt="web logo")
-            .topbar
-                #topbar.topbar__lab__mobile
-                    span PIIGLAB 
-                #topbar.topbar__lab__desktop
-                    span Laboratorio de Procesamiento de Inteligente de Información Geoespacial
-                .toggle-menu
-                    #toggle-menu.toggle-menu__icon
-                        .first-bar
-                        .second-bar
-                        .third-bar
-        #sidebar.sidebar
-            block menu
-        main.main
-            block title
-        script(src="js/scripts-min.js")
+        #fb-root
+        script(async='' defer='' crossorigin='anonymous' src='https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0' nonce='vbOLdK3G')
+        nav.navbar.is-light.has-shadow(role='navigation' aria-label='main navigation')
+            .navbar-brand
+                a.navbar-item(href='https://bulma.io')
+                img(src='assets/img/ipn_cic.png' width='112' height='28')
+                h4.title.is-4.is-hidden-touch Laboratorio de Procesamiento Inteligente de Información Geoespacial
+                h3.title.is-3.is-hidden-desktop PIIGLAB
+                a.navbar-burger.burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample')
+                span(aria-hidden='true')
+                span(aria-hidden='true')
+                span(aria-hidden='true')
+            #navbarBasicExample.navbar-menu
+                .navbar-start
+                .navbar-end
+                    a.navbar-item(href="/index.html") Inicio
+                    a.navbar-item(href="/covid-19.html") Covid-19
+                    a.navbar-item(href="/contacto.html") Contactanos
+        main
+        block title
+    block foot
+    script(src="js/scripts-min.js")
+    script(src="js/particles.min.js")
+
 

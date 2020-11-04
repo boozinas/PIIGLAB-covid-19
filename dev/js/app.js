@@ -4,12 +4,16 @@
  .controller('SlideController', SlideController)
  .controller('CategoryMapsController', CategoryMapsController)
  .service('MapListService', MapListService)
+ .filter('folder_filter', FolderFilter)
+ .filter('file_filter', FileFilter)
  .constant('ApiBasePath', "http://127.0.0.1:3001/url");
 
 SlideController.$inject = ['MapListService'];
 function SlideController(MapListService){
     var slide = this;
-    slide.condition = false;
+    slide.condition_category = false;
+    slide.condition_image = false;
+    slide.imageSlide = "";
     //Obtencion de categorias en la carpeta global
     var promise = MapListService.getCategoriesCOVID19();
 
@@ -22,7 +26,7 @@ function SlideController(MapListService){
     //obtencion de archivos (imagenes) de la carpeta particular
 
     slide.getImagesByCategory = function(category) {
-        slide.condition = true;
+        slide.condition_category = true;
        var promise = MapListService.getImages(category);
 
        promise.then(function (response){
@@ -34,6 +38,13 @@ function SlideController(MapListService){
        })
     };
 
+    slide.setSlide = function(slide_input){
+        slide.condition_image = true;
+        console.log(slide_input);
+        slide.imageSlide = slide_input;
+        // console.log(slide);
+    };
+    // Filtro para modificar el nombre de las carpetas
     // slide.getSlide = function(keyword){
     //     slide.slides = MapListService.checkKeywordFolder(keyword);
     //     console.log(slide.slides);
@@ -75,5 +86,22 @@ function MapListService($http, ApiBasePath){
         return response;
     };
 }
-    
+
+function FolderFilter(){
+    return function (input){
+        input = input || "";
+        input = input.replace(/_/g, " ");
+        return input;
+    };
+}
+
+function FileFilter(){
+    return function (input){
+        input = input || "";
+        input = input.replace(/^.*[\\\/]/, '');
+        input = input.replace(/\.[^/.]+$/, "");
+        return input;
+    };
+}
+   
 })();

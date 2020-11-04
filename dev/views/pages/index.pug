@@ -1,29 +1,45 @@
 extends ../templates/template
-block menu
-    -pageActive="inicio"
-    include ../includes/main-menu
+//- block menu
+//-     -pageActive="inicio"
+//-     include ../includes/main-menu-bulma
+//- block menu
+//-     -pageActive="inicio"
+//-     include ../includes/main-menu
 block title
-    h1.title Inicio
-    .inicio
-        .inicio__img.show
-            img(src="assets/img/inicio.jpg" alt="Imagen de inicio 1")
-        .inicio__text.show
-            h2 Objetivo
-            p  Desarrollar docencia e investigación enfocada hacia la resolución de problemas relacionados con el espacio geográfico.
+    section#particles-js.hero
+        .hero-body
+            h1.title.has-text-white-bis
+                | Bienvenida
+    .section
+        #carousel-demo.hero-carousel.mgh-large
+            .item-1: .hero-body.has-text-centered: h1.title.has-text-white Objetivo
+                columns.is-hidden-touch
+                    column
+                        h3.has-text-white Desarrollar docencia e investigación enfocada hacia la resolución de problemas relacionados con el espacio geográfico.
+                h1.has-text-white.is-hidden-tablet Desarrollar docencia e investigación enfocada hacia la resolución de problemas relacionados con el espacio geográfico.
 
-        .inicio__img
-            img(src="assets/img/about.jpg" alt="Imagen de inicio 2")
-        .inicio__text
-            h2 Misión
-            p Dar solución a los grandes problemas nacionales con una perspectiva geoespacial, incorporando las ciencias de la computación y las tecnologías geoespaciales, promoviendo la formación de equipos multidisciplinarios. 
-
-        .inicio__img
-            img(src="assets/img/about.jpg" alt="Imagen de inicio 3")
-        .inicio__text
-            h2 Vision
-            p Ser referente en docencia e investigación en el campo de las ciencias de la información geoespacial. 
-
-
-    .controls
-        i.fas.fa-chevron-circle-left#prevSlide
-        i.fas.fa-chevron-circle-right#nextSlide
+            .item-2: .hero-body.has-text-centered: h1.title.has-text-white.mb-4 Misión
+                columns.is-hidden-touch
+                    column
+                        h3.has-text-white Dar solución a los grandes problemas nacionales con una perspectiva geoespacial, incorporando las ciencias de la computación y las tecnologías geoespaciales, promoviendo la formación de equipos multidisciplinarios.
+                h3.has-text-white.is-hidden-tablet Dar solución a los grandes problemas nacionales con una perspectiva geoespacial, incorporando las ciencias de la computación y las tecnologías geoespaciales, promoviendo la formación de equipos multidisciplinarios.
+            .item-3: .hero-body.has-text-centered: h1.title.has-text-white.mb-4 Visión
+                columns.is-hidden-touch
+                    column
+                        h3.has-text-white Ser referente en docencia e investigación en el campo de las ciencias de la información geoespacial. 
+                h3.has-text-white.is-hidden-tablet Ser referente en docencia e investigación en el campo de las ciencias de la información geoespacial. 
+    script(src="js/bulma-carousel.min.js")
+    script.
+        document.addEventListener('DOMContentLoaded', function() {
+        bulmaCarousel.attach('#carousel-demo', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        navigation: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        });
+        }, false);
+    script(src="js/particles.min.js")
+    script(src="js/particles_app.js")
+block foot
+    include ../templates/footer

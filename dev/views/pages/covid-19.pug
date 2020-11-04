@@ -1,17 +1,35 @@
 extends ../templates/template
-block menu
-    -pageActive ='covid-19'
-    include ../includes/main-menu
+//- block menu
+//-     -pageActive ='covid-19'
+//-     include ../includes/main-menu
 block title
-    h1.title Mapas
+    //- section#particles-js-covid.hero.is-light
+    section#particles-js-covid.hero.is-dark
+        .hero-body
+            .container
+            h1.title Mapas COVID-19
     div(ng-app="Maps")
-        //div.menu_horizontal(ng-controller="CategoryMapsController as category") Hola 
-        //        ul.menu
-        //            li(ng-repeat="item in slider.slides"): a(href="#{{item}}") {{item}}
-        div.container(ng-controller="SlideController as slider")
-                ul.menu
-                    li(ng-repeat="category in slider.categories"): a(href="" ng-click="slider.getImagesByCategory(category);") {{category}}
-                ul.menu
-                    li(ng-repeat="item in slider.slides" ng-if="slider.condition"): a(href="#{{item}}") {{item}}
-                ul.slider(ng-if="slider.condition")
-                    li(ng-repeat="item in slider.slides" id="{{item}}"): img(src="{{item}}")
+        section.section
+            .content(ng-controller="SlideController as slider")
+                    .columns.is-1
+                        .column(ng-repeat="category in slider.categories"): a.button.is-link.is-light.is-medium(href="" ng-click="slider.getImagesByCategory(category);") {{category | folder_filter | uppercase}}
+                    .columns.is-1.is-multiline.is-vcentered
+                        .column(ng-repeat="item in slider.slides" ng-if="slider.condition_category"): a.button.is-light(href="#{{item}}" ng-click="slider.setSlide(item);") {{item | file_filter | folder_filter}}
+                    .container(ng-if="slider.condition_image")
+                        figure.image.is-4by3: img(src="{{slider.imageSlide}}")
+        script(src="js/bulma-carousel.min.js")
+        script.
+            document.addEventListener('DOMContentLoaded', function() {
+            //- bulmaCarousel.attach('#carousel-demo', {
+            slidesToScroll: 1,
+            slidesToShow: 3,
+            navigation: true,
+            autoplay: true,
+            loop: true,
+            autoplaySpeed: 1000
+            });
+            }, false);
+    script(src="js/particles.min.js")
+    script(src="js/particles_app_covid.js")
+block foot
+    include ../templates/footer
