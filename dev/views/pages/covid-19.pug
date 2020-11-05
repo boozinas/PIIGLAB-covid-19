@@ -3,7 +3,6 @@ extends ../templates/template
 //-     -pageActive ='covid-19'
 //-     include ../includes/main-menu
 block title
-    //- section#particles-js-covid.hero.is-light
     section#particles-js-covid.hero.is-dark
         .hero-body
             .container
@@ -17,18 +16,6 @@ block title
                         .column(ng-repeat="item in slider.slides" ng-if="slider.condition_category"): a.button.is-light(href="#{{item}}" ng-click="slider.setSlide(item);") {{item | file_filter | folder_filter}}
                     .container(ng-if="slider.condition_image")
                         figure.image.is-4by3: img(src="{{slider.imageSlide}}")
-        script(src="js/bulma-carousel.min.js")
-        script.
-            document.addEventListener('DOMContentLoaded', function() {
-            //- bulmaCarousel.attach('#carousel-demo', {
-            slidesToScroll: 1,
-            slidesToShow: 3,
-            navigation: true,
-            autoplay: true,
-            loop: true,
-            autoplaySpeed: 1000
-            });
-            }, false);
     script(src="js/particles.min.js")
     script(src="js/particles_app_covid.js")
 block foot
