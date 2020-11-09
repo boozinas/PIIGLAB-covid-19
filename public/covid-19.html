@@ -71,7 +71,7 @@
           <div class="column" ng-repeat="item in slider.slides" ng-if="slider.condition_category"><a class="button is-light" href="#{{item}}" ng-click="slider.setSlide(item);">{{item | file_filter | folder_filter}}</a></div>
         </div>
         <div class="container" ng-if="slider.condition_image">
-          <figure class="image is-4by3"><img src="{{slider.imageSlide}}"/></figure>
+          <figure class="image is-4by3"><img src="https://boozinas.github.io/piiglab_covid_image_server/public/{{slider.imageSlide}}"/></figure>
         </div>
       </div>
     </section>

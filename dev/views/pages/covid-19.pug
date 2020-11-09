@@ -15,7 +15,7 @@ block title
                     .columns.is-1.is-multiline.is-vcentered
                         .column(ng-repeat="item in slider.slides" ng-if="slider.condition_category"): a.button.is-light(href="#{{item}}" ng-click="slider.setSlide(item);") {{item | file_filter | folder_filter}}
                     .container(ng-if="slider.condition_image")
-                        figure.image.is-4by3: img(src="{{slider.imageSlide}}")
+                        figure.image.is-4by3: img(src="https://boozinas.github.io/piiglab_covid_image_server/public/{{slider.imageSlide}}")
     script(src="js/particles.min.js")
     script(src="js/particles_app_covid.js")
 block foot

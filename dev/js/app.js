@@ -6,7 +6,7 @@
  .service('MapListService', MapListService)
  .filter('folder_filter', FolderFilter)
  .filter('file_filter', FileFilter)
- .constant('ApiBasePath', "https://tranquil-plains-31303.herokuapp.com/url");
+ .constant('ApiBasePath', "https://piiglab-covid-image-server.herokuapp.com/url");
 
 SlideController.$inject = ['MapListService'];
 function SlideController(MapListService){
