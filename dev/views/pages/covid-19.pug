@@ -10,9 +10,10 @@ block title
     div(ng-app="Maps")
         section.section
             .content(ng-controller="SlideController as slider")
-                    .columns.is-1
-                        .column(ng-repeat="category in slider.categories"): a.button.is-link.is-light.is-medium(href="" ng-click="slider.getImagesByCategory(category);") {{category | folder_filter | uppercase}}
                     .columns.is-1.is-multiline.is-vcentered
+                        .column(ng-repeat="category in slider.categories"): a.button.is-link.is-light.is-medium(href="" ng-click="slider.getImagesByCategory(category);") {{category | folder_filter | uppercase}}
+                    //- .columns.is-1.is-multiline.is-vcentered.is-one-quarter.is-variable
+                    .columns.is-variable.is-multiline.is-1-mobile.is-0-tablet.is-3-desktop.is-2-widescreen.is-2-fullhd
                         .column(ng-repeat="item in slider.slides" ng-if="slider.condition_category"): a.button.is-light(href="#{{item}}" ng-click="slider.setSlide(item);") {{item | file_filter | folder_filter}}
                     .container(ng-if="slider.condition_image")
                         figure.image.is-4by3: img(src="https://boozinas.github.io/piiglab_covid_image_server/public/{{slider.imageSlide}}")

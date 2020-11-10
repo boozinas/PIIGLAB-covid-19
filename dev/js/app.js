@@ -38,17 +38,13 @@ function SlideController(MapListService){
        })
     };
 
+    //Asigna a la variable imageSlide la imagen seleccionada al hacer click en el menu
     slide.setSlide = function(slide_input){
         slide.condition_image = true;
         console.log(slide_input);
         slide.imageSlide = slide_input;
         // console.log(slide);
     };
-    // Filtro para modificar el nombre de las carpetas
-    // slide.getSlide = function(keyword){
-    //     slide.slides = MapListService.checkKeywordFolder(keyword);
-    //     console.log(slide.slides);
-    // };
 }
 
 CategoryMapsController.$inject = ['MapListService'];
@@ -60,10 +56,8 @@ function CategoryMapsController(MapListService){
 MapListService.$inject = ['$http', 'ApiBasePath']
 function MapListService($http, ApiBasePath){
     var service = this;
-    var mapList = []; //Para guardar la lista de direcciones de las imagenes
-    var keywordFolder = ""; //Para almacenar la palabra clave de la carpeta donde estan las imagenes a presentar
-    
-    // Hace la peticion al Backend mandando la clave del directorio para devolver un arreglo con imagenes
+
+    // Hace la peticion al Backend extrayendo todas las categorias (carpetas) de imagenes 
     service.getCategoriesCOVID19 = function (){
         var response = $http({
             method: "GET",
@@ -73,6 +67,7 @@ function MapListService($http, ApiBasePath){
         return response;
     };
 
+    // Hace la peticion al Backend mandando la clave del directorio para devolver un arreglo con imagenes
     service.getImages = function (categoryName){
         console.log(categoryName);
         var response = $http({

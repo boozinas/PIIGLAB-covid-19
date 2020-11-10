@@ -8,6 +8,7 @@ html(lang="en")
         link(rel="stylesheet" href="css/styles.css")
         link(href='css/bulma-carousel.min.css' rel='stylesheet')
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css")
+        link(href='https://www.cic.ipn.mx/images/logos/CIC_favicon_.png' rel='shortcut icon' type='image/vnd.microsoft.icon')
         title PIIGLAB COVID-19
         script(src="js/angular.min.js")
         script(src="js/app.js")
@@ -17,11 +18,12 @@ html(lang="en")
         script(async='' defer='' crossorigin='anonymous' src='https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0' nonce='vbOLdK3G')
         nav.navbar.is-light.has-shadow(role='navigation' aria-label='main navigation')
             .navbar-brand
-                a.navbar-item(href='https://bulma.io')
-                img(src='assets/img/ipn_cic.png' width='112' height='28')
+                a.navbar-item(href='./index.html')
+                img.navbar-item(src='assets/img/ipn_cic.png' width='112' height='28')
                 .navbar-start
-                    h2.is-2.navbar-item.is-hidden-touch Laboratorio de Procesamiento Inteligente de Información Geoespacial
-                    h3.title.navbar-item.is-3.is-hidden-desktop PIIGLAB
+                a.navbar-item(href='./index.html')
+                    h2.is-2.is-hidden-touch(href='./index.html') Laboratorio de Procesamiento Inteligente de Información Geoespacial
+                    h3.title.is-3.is-hidden-desktop PIIGLAB
                 a.navbar-burger.burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample')
                     span(aria-hidden='true')
                     span(aria-hidden='true')
@@ -30,7 +32,7 @@ html(lang="en")
                 .navbar-start
                 .navbar-end
                     a.navbar-item(href="./index.html") Inicio
-                    a.navbar-item(href="./covid-19.html") Covid-19
+                    a.navbar-item(href="./covid-19.html") COVID-19
                     a.navbar-item(href="./contacto.html") Contacto
         script.
             document.addEventListener('DOMContentLoaded', () => {
