@@ -2,7 +2,6 @@
  'use strict';
  angular.module('Maps',[])
  .controller('SlideController', SlideController)
- .controller('CategoryMapsController', CategoryMapsController)
  .service('MapListService', MapListService)
  .filter('folder_filter', FolderFilter)
  .filter('file_filter', FileFilter)
@@ -14,7 +13,7 @@ function SlideController(MapListService){
     slide.condition_category = false;
     slide.condition_image = false;
     slide.imageSlide = "";
-    //Obtencion de categorias en la carpeta global
+    //Obtencion de categorias en la carpeta global, comprometida a mostrarse unicamente cuando se obtenga una respuesta
     var promise = MapListService.getCategoriesCOVID19();
 
     promise.then(function (response) {
@@ -23,8 +22,8 @@ function SlideController(MapListService){
     .catch(function(error){
         console.log("Something went wrong");
     });
-    //obtencion de archivos (imagenes) de la carpeta particular
 
+    //obtencion de archivos (imagenes) de la carpeta particular
     slide.getImagesByCategory = function(category) {
         slide.condition_category = true;
        var promise = MapListService.getImages(category);
@@ -46,13 +45,7 @@ function SlideController(MapListService){
         // console.log(slide);
     };
 }
-
-CategoryMapsController.$inject = ['MapListService'];
-function CategoryMapsController(MapListService){
-    var category = this;
-
-}
-
+//Servicio para hacer las peticiones al servidor Espress, inyeccion de $http y la constante que almacena la dirección del servicio
 MapListService.$inject = ['$http', 'ApiBasePath']
 function MapListService($http, ApiBasePath){
     var service = this;
