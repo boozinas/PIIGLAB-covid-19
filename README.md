@@ -1,5 +1,5 @@
 # Página del PIIGLAB para exponer los mapas del COVID-19
-El sitio web utiliza tecnologías de Node js: [GULP](https://gulpjs.com/) para la automatización del preprocesado del código de estilos en [SASS](https://sass-lang.com/) y procesado de la maqueta [PUG](https://pugjs.org/api/getting-started.html) que retorna el HTML, para la sección "COVID-19" se usa Angular para mostrar dinamicamente el menu de las categorias y los mapas, dicha aplicación de [Angular](https://angular.io/) obtiene los datos de una api-rest creada con [Express](https://expressjs.com/).
+El sitio web utiliza tecnologías de Node js: [GULP](https://gulpjs.com/) para la automatización del preprocesado del código de estilos en [SASS](https://sass-lang.com/) y procesado de la maqueta [PUG](https://pugjs.org/api/getting-started.html) que retorna el HTML, para la sección "COVID-19" se usa Angular para mostrar dinamicamente el menu de las categorias y los mapas, dicha aplicación de [Angular](https://angular.io/) como Single Page Aplication obtiene los datos de una api-rest creada con [Express](https://expressjs.com/).
 ## Estructura básica de carpetas
 
     .
@@ -29,3 +29,6 @@ El sitio web utiliza tecnologías de Node js: [GULP](https://gulpjs.com/) para l
     gulp
     ```
     Todo se encuentra automatizado para que se procesen los documentos y se levante un servidor de desarrollo y se refresque al detectar cambios.
+
+### Arquitectura
+![alt text](https://boozinas.github.io/PIIGLAB-covid-19/public/assets/img/architecture_PIIGLAB_covid.png)
