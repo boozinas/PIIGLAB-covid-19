@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
     <link rel="stylesheet" href="css/styles.css"/>
     <link href="css/bulma-carousel.min.css" rel="stylesheet"/>
+    <link href="css/bulma-pageloader.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"/>
     <link href="https://www.cic.ipn.mx/images/logos/CIC_favicon_.png" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
     <title>PIIGLAB COVID-19</title>
@@ -71,7 +72,7 @@
           <div class="column" ng-repeat="item in slider.slides" ng-if="slider.condition_category"><a class="button is-light" href="#{{item}}" ng-click="slider.setSlide(item);">{{item | file_filter | folder_filter}}</a></div>
         </div>
         <div class="container" ng-if="slider.condition_image">
-          <figure class="image is-4by3"><img src="https://boozinas.github.io/piiglab_covid_image_server/public/{{slider.imageSlide}}"/></figure>
+          <figure class="image is-4by3"><img class="zoom" style="transition: opacity 1s" src="https://boozinas.github.io/piiglab_covid_image_server/public/{{slider.imageSlide}}"/></figure>
         </div>
       </div>
     </section>

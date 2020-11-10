@@ -71,3 +71,15 @@ ul.slider {
 .card {
   color: aquamarine;
 }
+
+.zoom:hover {
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  transition: all 2s ease;
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.zoom {
+  transition: transform .5s ease;
+  overflow: hidden;
+}
