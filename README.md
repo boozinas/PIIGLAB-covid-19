@@ -31,4 +31,4 @@ El sitio web utiliza tecnologías de Node js: [GULP](https://gulpjs.com/) para l
     Todo se encuentra automatizado para que se procesen los documentos y se levante un servidor de desarrollo y se refresque al detectar cambios.
 
 ### Arquitectura
-![alt text](https://boozinas.github.io/PIIGLAB-covid-19/public/assets/img/architecture_PIIGLAB_covid.png)
+![alt text](https://github.com/boozinas/PIIGLAB-covid-19/blob/main/public/assets/img/architecture_PIIGLAB_covid.png?raw=true)
