@@ -1,32 +1,33 @@
 extends ../templates/template
 block title
-    section.hero-body
-        .container.has-text-centered
-            h1.title.is-1 Contáctanos
-            .columns
-                .column
-                    .card
-                        header.card-header
-                            p.card-header-title Escríbenos
-                                span.icon: i.fas.fa-envelope
-                        .card-content: .content(style="color: #000000"): a(href="mailto:labgeoespacial@gmail.com") labgeoespacial@gmail.com
-                        footer.card-footer
-                .column
-                    .card
-                        header.card-header
-                            p.card-header-title Visítanos
-                                span.icon: i.fas.fa-map-marker-alt
-                        .card-content: .content(style="color: #000000") Av. Juan de Dios Bátiz S/N, Nueva Industrial Vallejo, Gustavo A. Madero, 07738 Ciudad de México, CDMX
-                        footer.card-footer
-            .columns
-                .column
-                    .card
-                        header.card-header
-                            p.card-header-title Llámanos
-                                span.icon: i.fas.fa-mobile-alt
-                        .card-content: .content(style="color: #000000"): a(href="#") +1 52 55 5729 6000
-                        footer.card-footer
-                .column
-                    iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.893093728327!2d-99.14976118553201!3d19.503234743472966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f84a9cf3183d%3A0x78efe76dd0d5bbe1!2sIPN%20-%20Computing%20Research%20Center!5e0!3m2!1sen!2smx!4v1604542349266!5m2!1sen!2smx' width='400' height='300' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0')
+    section.hero.is-grey-lighter
+        .hero-body
+            .container.has-text-centered
+                h1.title.is-1.has-text-info-dark Contáctanos
+                .columns
+                    .column
+                        .card
+                            header.card-header
+                                p.card-header-title Escríbenos
+                                    span.icon: i.fas.fa-envelope
+                            .card-content: .content(style="color: #000000"): a(href="mailto:labgeoespacial@gmail.com") labgeoespacial@gmail.com
+                            footer.card-footer
+                    .column
+                        .card
+                            header.card-header
+                                p.card-header-title Visítanos
+                                    span.icon: i.fas.fa-map-marker-alt
+                            .card-content: .content(style="color: #000000") Av. Juan de Dios Bátiz S/N, Nueva Industrial Vallejo, Gustavo A. Madero, 07738 Ciudad de México, CDMX
+                            footer.card-footer
+                .columns
+                    .column
+                        .card
+                            header.card-header
+                                p.card-header-title Llámanos
+                                    span.icon: i.fas.fa-mobile-alt
+                            .card-content: .content(style="color: #000000"): a(href="#") +1 52 55 5729 6000
+                            footer.card-footer
+                    .column
+                        iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.893093728327!2d-99.14976118553201!3d19.503234743472966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f84a9cf3183d%3A0x78efe76dd0d5bbe1!2sIPN%20-%20Computing%20Research%20Center!5e0!3m2!1sen!2smx!4v1604542349266!5m2!1sen!2smx' width='400' height='300' frameborder='0' style='border:0;' allowfullscreen='' aria-hidden='false' tabindex='0')
 block foot
     include ../templates/footer

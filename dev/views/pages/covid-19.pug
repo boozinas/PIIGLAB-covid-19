@@ -3,20 +3,19 @@ extends ../templates/template
 //-     -pageActive ='covid-19'
 //-     include ../includes/main-menu
 block title
-    section#particles-js-covid.hero.is-dark
+    section#particles-js-covid.hero
         .hero-body
-            .container
-            h1.title Mapas COVID-19
-    div(ng-app="Maps")
-        section.section
-            .content(ng-controller="SlideController as slider")
-                    .columns.is-1.is-multiline.is-vcentered
-                        .column(ng-repeat="category in slider.categories"): a.button.is-link.is-light.is-medium(href="" ng-click="slider.getImagesByCategory(category);") {{category | folder_filter | uppercase}}
-                    //- .columns.is-1.is-multiline.is-vcentered.is-one-quarter.is-variable
-                    .columns.is-variable.is-multiline.is-1-mobile.is-0-tablet.is-3-desktop.is-2-widescreen.is-2-fullhd
-                        .column(ng-repeat="item in slider.slides" ng-if="slider.condition_category"): a.button.is-light(href="#{{item}}" ng-click="slider.setSlide(item);") {{item | file_filter | folder_filter}}
-                    .container(ng-if="slider.condition_image")
-                        figure.image.is-4by3: img.zoom(style="transition: opacity 1s" src="https://boozinas.github.io/piiglab_covid_image_server/public/{{slider.imageSlide}}")
+            h1.title.has-text-info-dark Mapas COVID-19
+            h2.subtitle Generados por el laboratorio
+    section.section(ng-app="Maps")
+        .content(ng-controller="SlideController as slider")
+                .columns.is-1.is-multiline.is-vcentered
+                    .column(ng-repeat="category in slider.categories"): a.button.is-link.is-light.is-medium(href="" ng-click="slider.getImagesByCategory(category);") {{category | folder_filter | uppercase}}
+                //- .columns.is-1.is-multiline.is-vcentered.is-one-quarter.is-variable
+                .columns.is-variable.is-multiline.is-1-mobile.is-0-tablet.is-3-desktop.is-2-widescreen.is-2-fullhd
+                    .column(ng-repeat="item in slider.slides" ng-if="slider.condition_category"): a.button.is-light(href="#{{item}}" ng-click="slider.setSlide(item);") {{item | file_filter | folder_filter}}
+                .container(ng-if="slider.condition_image")
+                    figure.image.is-4by3: img.zoom(src="https://boozinas.github.io/piiglab_covid_image_server/public/{{slider.imageSlide}}")
     script(src="js/particles.min.js")
     script(src="js/particles_app_covid.js")
 block foot

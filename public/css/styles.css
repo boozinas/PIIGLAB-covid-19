@@ -52,6 +52,6 @@ ul.slider li:target { opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/ 
 
 .card { color: aquamarine; }
 
-.zoom:hover { transition: all 2s ease; transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */ }
+.zoom:hover { -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -ms-transform: scale(1.03); -moz-transform: scale(1.03); -webkit-transform: scale(1.03); transition: all 0.5s ease; transform: scale(1.03); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */ }
 
-.zoom { transition: transform .5s ease; overflow: hidden; }
+.zoom { overflow: hidden; }

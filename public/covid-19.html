@@ -56,27 +56,25 @@
     </script>
   </body>
   <main></main>
-  <section class="hero is-dark" id="particles-js-covid">
+  <section class="hero" id="particles-js-covid">
     <div class="hero-body">
-      <div class="container"></div>
-      <h1 class="title">Mapas COVID-19</h1>
+      <h1 class="title has-text-info-dark">Mapas COVID-19</h1>
+      <h2 class="subtitle">Generados por el laboratorio</h2>
     </div>
   </section>
-  <div ng-app="Maps">
-    <section class="section">
-      <div class="content" ng-controller="SlideController as slider">
-        <div class="columns is-1 is-multiline is-vcentered">
-          <div class="column" ng-repeat="category in slider.categories"><a class="button is-link is-light is-medium" href="" ng-click="slider.getImagesByCategory(category);">{{category | folder_filter | uppercase}}</a></div>
-        </div>
-        <div class="columns is-variable is-multiline is-1-mobile is-0-tablet is-3-desktop is-2-widescreen is-2-fullhd">
-          <div class="column" ng-repeat="item in slider.slides" ng-if="slider.condition_category"><a class="button is-light" href="#{{item}}" ng-click="slider.setSlide(item);">{{item | file_filter | folder_filter}}</a></div>
-        </div>
-        <div class="container" ng-if="slider.condition_image">
-          <figure class="image is-4by3"><img class="zoom" style="transition: opacity 1s" src="https://boozinas.github.io/piiglab_covid_image_server/public/{{slider.imageSlide}}"/></figure>
-        </div>
+  <section class="section" ng-app="Maps">
+    <div class="content" ng-controller="SlideController as slider">
+      <div class="columns is-1 is-multiline is-vcentered">
+        <div class="column" ng-repeat="category in slider.categories"><a class="button is-link is-light is-medium" href="" ng-click="slider.getImagesByCategory(category);">{{category | folder_filter | uppercase}}</a></div>
       </div>
-    </section>
-  </div>
+      <div class="columns is-variable is-multiline is-1-mobile is-0-tablet is-3-desktop is-2-widescreen is-2-fullhd">
+        <div class="column" ng-repeat="item in slider.slides" ng-if="slider.condition_category"><a class="button is-light" href="#{{item}}" ng-click="slider.setSlide(item);">{{item | file_filter | folder_filter}}</a></div>
+      </div>
+      <div class="container" ng-if="slider.condition_image">
+        <figure class="image is-4by3"><img class="zoom" src="https://boozinas.github.io/piiglab_covid_image_server/public/{{slider.imageSlide}}"/></figure>
+      </div>
+    </div>
+  </section>
   <script src="js/particles.min.js"></script>
   <script src="js/particles_app_covid.js"></script>
   <footer class="footer">
